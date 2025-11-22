@@ -24,12 +24,10 @@ export default function App() {
             setNews(null);
 
             try {
-              // For development, use localhost:8000, for production use the deployed API
               const baseURL = process.env.NODE_ENV === 'production' 
-                ? 'https://skill-gap-analysis-pl.vercel.app' 
+                ? '' 
                 : 'http://localhost:8000';
 
-              // call skill-gap
               const skillResp = await fetch(`${baseURL}/api/skill-gap`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -38,7 +36,6 @@ export default function App() {
               const skillJson = await skillResp.json();
               setAnalysis(skillJson);
 
-              // call roadmap
               const roadmapResp = await fetch(`${baseURL}/api/roadmap`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -47,7 +44,6 @@ export default function App() {
               const roadmapJson = await roadmapResp.json();
               setRoadmap(roadmapJson);
 
-              // call news
               const newsResp = await fetch(`${baseURL}/api/news`);
               const newsJson = await newsResp.json();
               setNews(newsJson?.news || newsJson);
