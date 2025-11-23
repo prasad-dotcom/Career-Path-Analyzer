@@ -27,6 +27,13 @@ A modern full-stack application that provides AI-powered career guidance through
 - **Requests** - HTTP library for HackerNews API integration
 - **Pydantic** - Data validation using Python type annotations
 
+#Demo
+
+
+https://github.com/user-attachments/assets/9272f268-12f2-465f-98c6-b4eaa7d19e05
+
+
+
 ## 🚀 Quick Start
 
 ### Prerequisites
